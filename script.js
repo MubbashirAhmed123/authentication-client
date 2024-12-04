@@ -44,7 +44,7 @@ document.getElementById('registerForm')?.addEventListener('submit', async (e) =>
     }
 
     try {
-        const res = await fetch('http://localhost:5000/user/register', {
+        const res = await fetch('https://user-authentication-khaki.vercel.app/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, email, password }),
@@ -80,7 +80,7 @@ document.getElementById('resetForm')?.addEventListener('submit', async (e) => {
     }
 
     try {
-        const res = await fetch('http://localhost:5000/user/resetpassword', {
+        const res = await fetch('https://user-authentication-khaki.vercel.app/resetpassword', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, newPassword }),
@@ -113,7 +113,7 @@ document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
 
 
     try {
-        const res = await fetch('http://localhost:5000/user/login', {
+        const res = await fetch('https://user-authentication-khaki.vercel.app/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password }),
@@ -151,7 +151,7 @@ async function checkAuth() {
     }
 
     try {
-        const res = await fetch('http://localhost:5000/auth/user', {
+        const res = await fetch('https://user-authentication-khaki.vercel.app/auth/user', {
             headers: { Authorization: `Bearer ${token}` },
         })
 
