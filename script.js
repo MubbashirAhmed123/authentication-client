@@ -44,7 +44,7 @@ document.getElementById('registerForm')?.addEventListener('submit', async (e) =>
     }
 
     try {
-        const res = await fetch('https://user-authentication-khaki.vercel.app/register', {
+        const res = await fetch('https://user-authentication-khaki.vercel.app/user/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, email, password }),
@@ -80,7 +80,7 @@ document.getElementById('resetForm')?.addEventListener('submit', async (e) => {
     }
 
     try {
-        const res = await fetch('https://user-authentication-khaki.vercel.app/resetpassword', {
+        const res = await fetch('https://user-authentication-khaki.vercel.app/user/resetpassword', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, newPassword }),
@@ -113,7 +113,7 @@ document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
 
 
     try {
-        const res = await fetch('https://user-authentication-khaki.vercel.app/login', {
+        const res = await fetch('https://user-authentication-khaki.vercel.app/user/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password }),
