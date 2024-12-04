@@ -122,7 +122,6 @@ document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
         const data = await res.json()
         if (res.ok) {
             successMsg.innerHTML=`<p class='text-green-900 bg-green-300 p-2 text-center'>${data.message}</p>`
-            console.log('Token:', data.token)
             localStorage.setItem('token', data.token)
             window.location.href = 'index.html'
         } else {
@@ -145,7 +144,6 @@ const logoutBtn = document.getElementById('logoutBtn')
 async function checkAuth() {
 
     if (!token) {
-        console.log('no token')
         guest.style.display = 'block'
         return
     }
@@ -165,8 +163,7 @@ async function checkAuth() {
             guest.style.display = 'block'
         }
     } catch (error) {
-        console.error('Error fetching user data:', error)
-        guest.style.display = 'block'
+=        guest.style.display = 'block'
     }
 }
 checkAuth()
